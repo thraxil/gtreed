@@ -1,0 +1,36 @@
+import sys; sys.__plen = len(sys.path)
+#./setuptools-0.6c7-py2.5.egg
+./cElementTree-1.0.5_20051216-py2.5-linux-x86_64.egg
+./Cheetah-2.0rc8-py2.5-linux-x86_64.egg
+./CherryPy-2.2.1-py2.5.egg
+./configobj-4.4.0-py2.5.egg
+./DecoratorTools-1.4-py2.5.egg
+./elementtree-1.2.6_20050316-py2.5.egg
+./FormEncode-0.7.1-py2.5.egg
+./httplib2-0.3.0-py2.5.egg
+./kid-0.9.5-py2.5.egg
+./markdown-1.6-py2.5.egg
+./nose-0.9.3-py2.5.egg
+./Paste-1.4-py2.5.egg
+./PasteDeploy-1.3.1-py2.5.egg
+./PasteScript-1.3.5-py2.5.egg
+./psycopg2-2.0.6-py2.5-linux-x86_64.egg
+./pyparsing-1.4.6-py2.5.egg
+./PyProtocols-1.0a0-py2.5-linux-x86_64.egg
+./rdflib-2.4.0-py2.5-linux-x86_64.egg
+./restclient-0.9.9-py2.5.egg
+./Routes-1.7-py2.5.egg
+./RuleDispatch-0.5a0.dev_r2306-py2.5-linux-x86_64.egg
+./Select_Shuttle-1.2-py2.5.egg
+./TurboGears-1.0.2.2-py2.5.egg
+./simplejson-1.7.1-py2.5.egg
+./TurboKid-1.0.1-py2.5.egg
+./TurboCheetah-0.9.5-py2.5.egg
+./TurboJson-1.1-py2.5.egg
+./setuptools-0.6c7-py2.5.egg
+./SQLObject-0.9.0-py2.5.egg
+./textile-2.0.11-py2.5.egg
+./tgstatic-0.3-py2.5.egg
+./TurboTinyMCE-1.0.6-py2.5.egg
+./WebHelpers-0.3-py2.5.egg
+import sys; new=sys.path[sys.__plen:]; del sys.path[sys.__plen:]; p=getattr(sys,'__egginsert',0); sys.path[p:p]=new; sys.__egginsert = p+len(new)

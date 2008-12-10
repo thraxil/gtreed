@@ -1,0 +1,5 @@
+always_unzip = True
+include_site_packages = False
+install_extra = True
+cross_platform_activate = False
+install_as_home = False

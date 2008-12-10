@@ -1,0 +1,9 @@
+# You can place test-specific configuration options here (like test db uri, etc)
+#
+
+#if $sqlalchemy != "True"
+sqlobject.dburi = "sqlite:///:memory:"
+#else
+sqlalchemy.dburi = "sqlite:///:memory:"
+#end if
+

@@ -1,0 +1,2 @@
+db_module=${package}.model
+history_dir=${"$"}base/${package}/sqlobject-history

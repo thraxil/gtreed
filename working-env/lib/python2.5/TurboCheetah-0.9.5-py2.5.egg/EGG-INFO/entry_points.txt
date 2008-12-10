@@ -1,0 +1,4 @@
+
+    [python.templating.engines]
+    cheetah = turbocheetah.cheetahsupport:TurboCheetah
+    

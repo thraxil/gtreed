@@ -1,0 +1,12 @@
+README.txt
+setup.cfg
+setup.py
+TurboKid.egg-info/PKG-INFO
+TurboKid.egg-info/SOURCES.txt
+TurboKid.egg-info/dependency_links.txt
+TurboKid.egg-info/entry_points.txt
+TurboKid.egg-info/not-zip-safe
+TurboKid.egg-info/requires.txt
+TurboKid.egg-info/top_level.txt
+turbokid/__init__.py
+turbokid/kidsupport.py

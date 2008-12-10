@@ -1,0 +1,7 @@
+README.txt
+markdown.py
+setup.py
+markdown.egg-info/PKG-INFO
+markdown.egg-info/SOURCES.txt
+markdown.egg-info/dependency_links.txt
+markdown.egg-info/top_level.txt

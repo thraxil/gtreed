@@ -1,0 +1,21 @@
+Metadata-Version: 1.0
+Name: Select-Shuttle
+Version: 1.2
+Summary: The SelectShuttle widget provides a mechanism for selecting multiple values from a list of values by allowing the user to move items between two lists. On modern browsers you can also double click an item to move it from one list to the other. After the first "move", all entries will be sorted automatically accordingly to its "description" on both lists. Take a look at the code for SelectShuttleDesc for an example of how to use this widget in your code.
+Home-page: http://www.g2ctech.com/
+Author: Jorge Godoy
+Author-email: jgodoy@gmail.com
+License: MIT
+Download-URL: http://www.g2ctech.com/widgets/Select_Shuttle-1.2-py2.5.egg
+Description: UNKNOWN
+Keywords: turbogears.widgets
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Framework :: TurboGears
+Classifier: Framework :: TurboGears :: Widgets
+Classifier: Environment :: Web Environment
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content

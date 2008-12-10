@@ -1,0 +1,2 @@
+db_module=treed.model
+history_dir=$base/treed/sqlobject-history

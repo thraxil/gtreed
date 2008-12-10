@@ -1,0 +1,19 @@
+Metadata-Version: 1.0
+Name: TurboCheetah
+Version: 0.9.5
+Summary: TurboGears plugin to support use of Cheetah templates.
+Home-page: http://www.turbogears.org/docs/plugins/template.html
+Author: Kevin Dangoor
+Author-email: dangoor+turbogears@gmail.com
+License: MIT
+Download-URL: http://www.turbogears.org/download/
+Description: This template plugin can be used with TurboGears
+        or Buffet. The development version is here:
+        http://www.turbogears.org/svn/turbogears/trunk/plugins/cheetah/#egg=TurboCheetah-dev
+Keywords: python.templating.engines,turbogears
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

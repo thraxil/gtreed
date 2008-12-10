@@ -1,0 +1,4 @@
+
+    [python.templating.engines]
+    kid = turbokid.kidsupport:KidSupport
+    

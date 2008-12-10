@@ -1,0 +1,68 @@
+# This file must be used with "source bin/activate" *from bash*
+# you cannot run it directly
+
+deactivate () {
+    if [ -n "$_WE_OLD_WORKING_PATH" ] ; then
+        PATH="$_WE_OLD_WORKING_PATH"
+        export PATH
+        unset _WE_OLD_WORKING_PATH
+    fi
+    if [ -n "$_WE_OLD_PYTHONPATH" ] ; then
+        if [ "$_WE_OLD_PYTHONPATH" = "__none__" ] ; then
+            unset PYTHONPATH
+        else
+            PYTHONPATH="$_WE_OLD_PYTHONPATH"
+        fi
+        export PYTHONPATH
+        unset _WE_OLD_PYTHONPATH
+    fi
+    if [ -n "$_WE_OLD_PS1" ] ; then
+        PS1="$_WE_OLD_PS1"
+        export PS1
+        unset _WE_OLD_PS1
+    fi
+
+
+    unset WORKING_ENV
+    
+
+    if [ ! "$1" = "nondestructive" ] ; then
+    # Self destruct!
+        unset deactivate
+    fi
+}
+
+# unset irrelavent variables
+deactivate nondestructive
+
+export WORKING_ENV="/home/anders/code/python/TreeD/working-env"
+
+_WE_OLD_WORKING_PATH="$PATH"
+PATH="$WORKING_ENV/bin:$PATH"
+export PATH
+export _WE_OLD_WORKING_PATH
+
+_WE_OLD_PS1="$PS1"
+PS1="(`basename $WORKING_ENV`)$PS1"
+export PS1
+export _WE_OLD_PS1
+
+if [ -z "$PYTHONPATH" ] ; then
+    _WE_OLD_PYTHONPATH="__none__"
+    PYTHONPATH="$WORKING_ENV/lib/python2.5"
+else
+    _WE_OLD_PYTHONPATH="$PYTHONPATH"
+    PYTHONPATH="$WORKING_ENV/lib/python2.5:$PYTHONPATH"
+fi
+export PYTHONPATH
+export _WE_OLD_PYTHONPATH
+
+
+# This should detect bash, which has a hash command that must
+# be called to get it to forget past commands.  Without
+# forgetting past commands the $PATH changes we made may not
+# be respected
+if [ -n "$BASH" ] ; then
+    hash -r
+fi
+

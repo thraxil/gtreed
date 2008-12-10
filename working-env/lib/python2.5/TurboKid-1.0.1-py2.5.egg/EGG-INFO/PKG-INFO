@@ -1,0 +1,17 @@
+Metadata-Version: 1.0
+Name: TurboKid
+Version: 1.0.1
+Summary: Python template plugin that supports Kid templates
+Home-page: http://www.turbogears.org/docs/plugins/template.html
+Author: Kevin Dangoor
+Author-email: dangoor+turbogears@gmail.com
+License: MIT
+Download-URL: http://www.turbogears.org/download/
+Description: UNKNOWN
+Keywords: python.templating.engines,turbogears
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

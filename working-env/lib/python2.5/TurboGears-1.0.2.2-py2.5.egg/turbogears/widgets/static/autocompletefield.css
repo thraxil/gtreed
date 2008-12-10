@@ -1,0 +1,33 @@
+.autoTextResults {
+	position: absolute;
+	z-index: 100;
+}
+
+.autoTextTable {
+	background-color: #ffffff;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.autoTextNormalRow {
+	font-family: arial, sans-serif;
+	font-size: 13px;
+}
+
+.autoTextSelectedRow {
+	background-color: #3366cc;
+	color: #ffffff;
+	font-family: arial, sans-serif;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.autoTextHighlight {
+	font-weight: bold;
+}
+
+.autoTextHidden {
+	display: none;
+}

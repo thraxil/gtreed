@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: restclient
+Version: 0.9.9
+Summary: convenient library for writing REST clients
+Home-page: http://microapps.sourceforge.net/restclient/
+Author: Anders Pearson
+Author-email: anders@columbia.edu
+License: BSD
+Description: makes it easy to invoke REST services properly
+Platform: any

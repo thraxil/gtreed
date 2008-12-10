@@ -1,0 +1,134 @@
+/*
+ * Quick mash-up of CSS for the TG quick start page.
+ */
+
+html, body, th, td {
+  color: black;
+  background-color: #ddd;
+  font: 98% "Lucida Grande", "Lucida Sans Unicode", geneva, verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  height: 80px;
+  width: 71%;
+  background: blue  URL('../images/banner.jpg') no-repeat;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  margin: 0 auto 0 auto;
+}
+
+a.link, a, a.active {
+  color: #369;
+}
+
+.OPEN { color: #000; }
+.CLOSED { color: #ccc; }
+.RESOLVED { color: #666; }
+
+.list-controls { display: none; }
+
+li:hover>.list-controls { display: inline; }
+
+li:hover { background-color: #eee; }
+
+li { list-style-type: none; }
+
+#main_content {
+  color: black;
+  background-color: white;
+  width: 70%;
+  margin: 0 auto 0 auto;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  padding: 10px;
+}
+
+#sidebar {
+  border: 1px solid #aaa;
+  background-color: #eee;
+  margin: 0.5em;
+  padding: 1em;
+  float: right;
+  width: 300px;
+}
+
+#sidebar h2 {
+  margin-top: 0;
+}
+
+#sidebar ul {
+  margin-left: 1.5em;
+  padding-left: 0;
+}
+
+.edit { background-color: #ddd; border: 0px; }
+
+.edit-form { display: none; }
+
+h1 { font-size: 120%; }
+table { border-collapse: collapse; }
+
+th,td { background-color: #fff; color: #000; vertical-align: top; border: #ccc solid 1px; padding: 1px;}
+th { font-weight: bold; text-align: left; vertical-align: top; }
+
+th h1 { margin: 0px; }
+
+h2 {
+  font-size:150%
+}
+
+#getting_started_steps a {
+  text-decoration:none;
+}
+
+#getting_started_steps a:hover {
+  text-decoration:underline;
+}
+
+#footer {
+  border: 1px solid #aaa;
+  border-top: 0px none;
+  color: #999;
+  background-color: white;
+  padding: 10px;
+  font-size: 80%;
+  text-align: center;
+  width: 757px;
+  margin: 0 auto 1em auto;
+}
+
+.code {
+  font-family: monospace;
+}
+
+span.code {
+  font-weight: bold;
+  background: #eee;
+}
+
+#status_block {
+	margin: 0 auto 0.5em auto;
+	padding: 15px 10px 15px 55px;
+  background: #cec URL('../images/ok.png') left center no-repeat;
+	border: 1px solid #9c9;
+  width: 450px;
+  font-size: 120%;
+  font-weight: bolder;
+}
+
+.notice {
+  margin: 0.5em auto 0.5em auto;
+  padding: 15px 10px 15px 55px;
+  width: 450px;
+  background: #eef URL('../images/info.png') left center no-repeat;
+  border: 1px solid #cce;
+}
+
+.invisible { display: none; }
+li.CLOSED a { color: #99c; }
+
+.dragging { cursor: move;}
+
+.selected { background-color: #ff0; }

@@ -1,0 +1,251 @@
+#if $identity != "none"
+from datetime import datetime
+#end if
+#if $sqlalchemy != "True"
+from turbogears.database import PackageHub
+from sqlobject import *
+#else
+from sqlalchemy import *
+from turbogears.database import metadata, session
+from sqlalchemy.ext.assignmapper import assign_mapper
+#end if
+#if $identity != "none"
+from turbogears import identity
+#end if
+
+#if $sqlalchemy != "True"
+hub = PackageHub('${package}')
+__connection__ = hub
+#end if
+
+#if $sqlalchemy!="True"
+# class YourDataClass(SQLObject):
+#     pass
+#end if
+
+#if $identity=="sqlobject"
+###
+# identity models.
+###
+class Visit(SQLObject):
+    """
+    A visit to your site
+    """
+    class sqlmeta:
+        table = 'visit'
+
+    visit_key = StringCol(length=40, alternateID=True,
+                          alternateMethodName='by_visit_key')
+    created = DateTimeCol(default=datetime.now)
+    expiry = DateTimeCol()
+
+    def lookup_visit(cls, visit_key):
+        try:
+            return cls.by_visit_key(visit_key)
+        except SQLObjectNotFound:
+            return None
+    lookup_visit = classmethod(lookup_visit)
+
+
+class VisitIdentity(SQLObject):
+    """
+    A Visit that is link to a User object
+    """
+    visit_key = StringCol(length=40, alternateID=True,
+                          alternateMethodName='by_visit_key')
+    user_id = IntCol()
+
+
+class Group(SQLObject):
+    """
+    An ultra-simple group definition.
+    """
+    # names like "Group", "Order" and "User" are reserved words in SQL
+    # so we set the name to something safe for SQL
+    class sqlmeta:
+        table = 'tg_group'
+
+    group_name = UnicodeCol(length=16, alternateID=True,
+                            alternateMethodName='by_group_name')
+    display_name = UnicodeCol(length=255)
+    created = DateTimeCol(default=datetime.now)
+
+    # collection of all users belonging to this group
+    users = RelatedJoin('User', intermediateTable='user_group',
+                        joinColumn='group_id', otherColumn='user_id')
+
+    # collection of all permissions for this group
+    permissions = RelatedJoin('Permission', joinColumn='group_id',
+                              intermediateTable='group_permission',
+                              otherColumn='permission_id')
+
+
+class User(SQLObject):
+    """
+    Reasonably basic User definition.
+    Probably would want additional attributes.
+    """
+    # names like "Group", "Order" and "User" are reserved words in SQL
+    # so we set the name to something safe for SQL
+    class sqlmeta:
+        table = 'tg_user'
+
+    user_name = UnicodeCol(length=16, alternateID=True,
+                           alternateMethodName='by_user_name')
+    email_address = UnicodeCol(length=255, alternateID=True,
+                               alternateMethodName='by_email_address')
+    display_name = UnicodeCol(length=255)
+    password = UnicodeCol(length=40)
+    created = DateTimeCol(default=datetime.now)
+
+    # groups this user belongs to
+    groups = RelatedJoin('Group', intermediateTable='user_group',
+                         joinColumn='user_id', otherColumn='group_id')
+
+    def _get_permissions(self):
+        perms = set()
+        for g in self.groups:
+            perms = perms | set(g.permissions)
+        return perms
+
+    def _set_password(self, cleartext_password):
+        "Runs cleartext_password through the hash algorithm before saving."
+        password_hash = identity.encrypt_password(cleartext_password)
+        self._SO_set_password(password_hash)
+
+    def set_password_raw(self, password):
+        "Saves the password as-is to the database."
+        self._SO_set_password(password)
+
+
+class Permission(SQLObject):
+    """
+    A relationship that determines what each Group can do
+    """
+    permission_name = UnicodeCol(length=16, alternateID=True,
+                                 alternateMethodName='by_permission_name')
+    description = UnicodeCol(length=255)
+
+    groups = RelatedJoin('Group',
+                         intermediateTable='group_permission',
+                         joinColumn='permission_id',
+                         otherColumn='group_id')
+#else if $identity=="sqlalchemy"
+# The identity schema.
+visits_table = Table('visit', metadata,
+    Column('visit_key', String(40), primary_key=True),
+    Column('created', DateTime, nullable=False, default=datetime.now),
+    Column('expiry', DateTime)
+)
+
+visit_identity_table = Table('visit_identity', metadata,
+    Column('visit_key', String(40), primary_key=True),
+    Column('user_id', Integer, ForeignKey('tg_user.user_id'), index=True)
+)
+
+groups_table = Table('tg_group', metadata,
+    Column('group_id', Integer, primary_key=True),
+    Column('group_name', Unicode(16), unique=True),
+    Column('display_name', Unicode(255)),
+    Column('created', DateTime, default=datetime.now)
+)
+
+users_table = Table('tg_user', metadata,
+    Column('user_id', Integer, primary_key=True),
+    Column('user_name', Unicode(16), unique=True),
+    Column('email_address', Unicode(255), unique=True),
+    Column('display_name', Unicode(255)),
+    Column('password', Unicode(40)),
+    Column('created', DateTime, default=datetime.now)
+)
+
+permissions_table = Table('permission', metadata,
+    Column('permission_id', Integer, primary_key=True),
+    Column('permission_name', Unicode(16), unique=True),
+    Column('description', Unicode(255))
+)
+
+user_group_table = Table('user_group', metadata,
+    Column('user_id', Integer, ForeignKey('tg_user.user_id',
+        onupdate="CASCADE", ondelete="CASCADE")),
+    Column('group_id', Integer, ForeignKey('tg_group.group_id',
+        onupdate="CASCADE", ondelete="CASCADE"))
+)
+
+group_permission_table = Table('group_permission', metadata,
+    Column('group_id', Integer, ForeignKey('tg_group.group_id',
+        onupdate="CASCADE", ondelete="CASCADE")),
+    Column('permission_id', Integer, ForeignKey('permission.permission_id',
+        onupdate="CASCADE", ondelete="CASCADE"))
+)
+
+
+class Visit(object):
+    """
+    A visit to your site
+    """
+    def lookup_visit(cls, visit_key):
+        return Visit.get(visit_key)
+    lookup_visit = classmethod(lookup_visit)
+
+class VisitIdentity(object):
+    """
+    A Visit that is link to a User object
+    """
+    pass
+
+class Group(object):
+    """
+    An ultra-simple group definition.
+    """
+    pass
+
+class User(object):
+    """
+    Reasonably basic User definition. Probably would want additional
+    attributes.
+    """
+    def permissions(self):
+        perms = set()
+        for g in self.groups:
+            perms = perms | set(g.permissions)
+        return perms
+    permissions = property(permissions)
+
+    def by_email_address(klass, email):
+        """
+        A class method that can be used to search users
+        based on their email addresses since it is unique.
+        """
+        return klass.get_by(users_table.c.email_address==email)
+
+    by_email_address = classmethod(by_email_address)
+
+    def by_user_name(klass, username):
+        """
+        A class method that permits to search users
+        based on their user_name attribute.
+        """
+        return klass.get_by(users_table.c.user_name==username)
+    by_user_name = classmethod(by_user_name)
+
+class Permission(object):
+    """
+    A relationship that determines what each Group can do
+    """
+    pass
+
+def assign(*args, **kw):
+    """Map tables to objects with knowledge about the session context."""
+    return assign_mapper(session.context, *args, **kw)
+
+assign(Visit, visits_table)
+assign(VisitIdentity, visit_identity_table,
+          properties=dict(users=relation(User, backref='visit_identity')))
+assign(User, users_table)
+assign(Group, groups_table,
+          properties=dict(users=relation(User, secondary=user_group_table, backref='groups')))
+assign(Permission, permissions_table,
+          properties=dict(groups=relation(Group, secondary=group_permission_table, backref='permissions')))
+
+#end if

@@ -1,0 +1,17 @@
+Metadata-Version: 1.0
+Name: CherryPy
+Version: 2.2.1
+Summary: Object-Oriented web development framework
+Home-page: http://www.cherrypy.org
+Author: CherryPy Team
+Author-email: team@cherrypy.org
+License: BSD
+Download-URL: http://sourceforge.net/project/showfiles.php?group_id=56099
+Description: CherryPy is a pythonic, object-oriented web development framework
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: Freely Distributable
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet 
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks

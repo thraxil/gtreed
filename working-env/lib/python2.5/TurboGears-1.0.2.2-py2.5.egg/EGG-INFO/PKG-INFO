@@ -1,0 +1,33 @@
+Metadata-Version: 1.0
+Name: TurboGears
+Version: 1.0.2.2
+Summary: front-to-back rapid web development
+Home-page: http://www.turbogears.org
+Author: Kevin Dangoor
+Author-email: dangoor+turbogears@gmail.com
+License: MIT
+Download-URL: http://www.turbogears.org/download/filelist.html
+Description: 
+        TurboGears brings together four major pieces to create an
+        easy to install, easy to use web megaframework. It covers
+        everything from front end (MochiKit JavaScript for the browser,
+        Kid for templates in Python) to the controllers (CherryPy) to
+        the back end (SQLObject).
+        
+        The TurboGears project is focused on providing documentation
+        and integration with these tools without losing touch
+        with the communities that already exist around those tools.
+        
+        TurboGears is easy to use for a wide range of web applications.
+        
+        The latest development version is available in
+        <a href="http://www.turbogears.org/svn/turbogears/trunk#egg=turbogears-dev">
+        the TurboGears subversion repository</a>.
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

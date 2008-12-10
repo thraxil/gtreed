@@ -1,0 +1,5 @@
+#!/usr/bin/python
+import sys
+from Cheetah.CheetahWrapper import CheetahWrapper
+sys.argv.insert(1, "compile")
+CheetahWrapper().main()

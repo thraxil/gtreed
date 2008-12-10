@@ -1,0 +1,11 @@
+README
+setup.py
+tgstatic/__init__.py
+tgstatic/release.py
+tgstatic/static.py
+tgstatic.egg-info/PKG-INFO
+tgstatic.egg-info/SOURCES.txt
+tgstatic.egg-info/dependency_links.txt
+tgstatic.egg-info/not-zip-safe
+tgstatic.egg-info/requires.txt
+tgstatic.egg-info/top_level.txt

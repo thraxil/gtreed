@@ -1,0 +1,14 @@
+Version 0.94
+
+* Incompatible changes
+
+  - IDs were changed from "name_id" to "name", so that both name and id are 
+    the same.  This makes this more comformant to W3C standards.
+
+* Changes
+
+  - JavaScript templates now use the attribute "type" instead of "language"
+    to signal that they are about JavaScript code.  This also makes this 
+    widget more comformant to W3C standards.
+
+

@@ -1,0 +1,18 @@
+Metadata-Version: 1.0
+Name: TurboJson
+Version: 1.1
+Summary: Python template plugin that supports json 
+Home-page: http://www.turbogears.org/docs/plugins/template.html
+Author: Elvelind Grandin
+Author-email: elvelind+turbogears@gmail.com
+License: MIT
+Download-URL: http://www.turbogears.org/download/
+Description: UNKNOWN
+Keywords: python.templating.engines,turbogears
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: TurboGears
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

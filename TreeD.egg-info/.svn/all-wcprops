@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/2/trunk/TreeD.egg-info
+END
+SOURCES.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/TreeD.egg-info/SOURCES.txt
+END
+sqlobject.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/TreeD.egg-info/sqlobject.txt
+END
+top_level.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/TreeD.egg-info/top_level.txt
+END
+PKG-INFO
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/TreeD.egg-info/PKG-INFO
+END
+dependency_links.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/TreeD.egg-info/dependency_links.txt
+END
+not-zip-safe
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/TreeD.egg-info/not-zip-safe
+END
+requires.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/TreeD.egg-info/requires.txt
+END
+paster_plugins.txt
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/TreeD.egg-info/paster_plugins.txt
+END

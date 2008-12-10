@@ -1,0 +1,8 @@
+README
+setup.py
+httplib2/__init__.py
+httplib2/iri2uri.py
+httplib2.egg-info/PKG-INFO
+httplib2.egg-info/SOURCES.txt
+httplib2.egg-info/dependency_links.txt
+httplib2.egg-info/top_level.txt

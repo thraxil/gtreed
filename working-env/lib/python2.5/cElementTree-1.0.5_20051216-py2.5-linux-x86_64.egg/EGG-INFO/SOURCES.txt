@@ -1,0 +1,10 @@
+README
+cElementTree.c
+setup.py
+cElementTree.egg-info/PKG-INFO
+cElementTree.egg-info/SOURCES.txt
+cElementTree.egg-info/dependency_links.txt
+cElementTree.egg-info/top_level.txt
+expat/xmlparse.c
+expat/xmlrole.c
+expat/xmltok.c

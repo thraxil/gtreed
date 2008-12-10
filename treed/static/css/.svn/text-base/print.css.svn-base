@@ -1,0 +1,5 @@
+#sidebar { display: none; }
+.nextactionform { display: none; }
+.list-controls { display: none; }
+form { display: none; }
+th { display: none; }
